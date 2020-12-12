@@ -1,26 +1,30 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ca1fm;
-
 
 /**
  *
- * @author Fabiolla/Farley
+ * @author farleyreis Fabiola
  */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MenuSP extends JFrame implements ActionListener {
+public class CONTROLLER extends JFrame implements ActionListener {
 
     Container container = getContentPane();
 
-    JButton b1 = new JButton("Schedule");
-    JButton b2 = new JButton("Confirm Bookings");
-    JButton b3 = new JButton("SET availability");
-    JButton b4 = new JButton("Check Feedbacks & Payments");
-    JButton logout = new JButton("LogOut");
+    JButton b1 = new JButton("ENTER AVAILABLE SLOTS");
+    JButton b2 = new JButton("CANCEL BOOKS");
+    JButton b3 = new JButton("SETTINGS");
+    JButton b4 = new JButton("FEEDBACKS & PAYMENTS");
+    JButton home = new JButton("HOME PAGE");
 
-    MenuSP() {
+    CONTROLLER() {
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
@@ -30,7 +34,7 @@ public class MenuSP extends JFrame implements ActionListener {
 
     public void setLayoutManager() {
         container.setLayout(null);
-        
+
     }
 
     public void setLocationAndSize() {
@@ -38,8 +42,8 @@ public class MenuSP extends JFrame implements ActionListener {
         b2.setBounds(220, 100, 200, 32);
         b3.setBounds(220, 150, 200, 32);
         b4.setBounds(220, 200, 200, 32);
-        logout.setBounds(220, 300, 200, 32);
-//        
+        home.setBounds(220, 250, 200, 32);
+
         setSize(700, 550);
     }
 
@@ -48,11 +52,10 @@ public class MenuSP extends JFrame implements ActionListener {
         container.add(b2);
         container.add(b3);
         container.add(b4);
-        container.add(logout);
-        
-        logout.setForeground(Color.red);
-        logout.setOpaque(true);
+        container.add(home);
 
+        home.setForeground(Color.red);
+        home.setOpaque(true);
     }
 
     public void addActionEvent() {
@@ -60,24 +63,22 @@ public class MenuSP extends JFrame implements ActionListener {
         b2.addActionListener(this);
         b3.addActionListener(this);
         b4.addActionListener(this);
-        logout.addActionListener(this);
-        
-        logout.setForeground(Color.red);
-        logout.setOpaque(true);
+        home.addActionListener(this);
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == b1) {
 
-            Schedule nc = new Schedule();
+            BOOKS nc = new BOOKS();
             nc.setVisible(true);
             dispose();
-          
+            JOptionPane.showMessageDialog(this, "Login Successful");
         }
 
         if (e.getSource() == b2) {
-            ConfBookings nc = new ConfBookings() {
+            NCLIENT nc = new NCLIENT() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -87,26 +88,23 @@ public class MenuSP extends JFrame implements ActionListener {
             dispose();
         }
         if (e.getSource() == b3) {
-            SetAvailability nc = new SetAvailability();
+            SETTINGS nc = new SETTINGS();
             nc.setVisible(true);
             dispose();
 
         }
-        if (e.getSource() == b4) {
-            FeedbackPaymentSP nc = new  FeedbackPaymentSP();
-            nc.setVisible(true);
-            dispose();
-           
-
-        } 
-        
-        if (e.getSource() == logout) {
+        if (e.getSource() == home) {
             CA1fm nc = new CA1fm();
             nc.setVisible(true);
             dispose();
+
+        } else {
         }
-        
-        else {
-        }
+
     }
+
+    public void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

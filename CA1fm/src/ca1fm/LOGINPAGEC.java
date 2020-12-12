@@ -5,11 +5,9 @@
  */
 package ca1fm;
 
-
-
 /**
  *
- * @author Fabiolla/Farley
+ * @author farleyreis Fabiola
  */
 import javax.swing.*;
 import java.awt.*;
@@ -21,18 +19,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LOGINPAGESP extends JFrame implements ActionListener {
+public class LOGINPAGEC extends JFrame implements ActionListener {
 
     Container container = getContentPane();
-    JLabel userLabel = new JLabel("USERNAME");
+    JLabel userLabel = new JLabel("EMAIL");
     JLabel passwordLabel = new JLabel("PASSWORD");
     JTextField userTextField = new JTextField();
     JPasswordField passwordField = new JPasswordField();
     JButton loginButton = new JButton("LOGIN");
-    JButton SPButton = new JButton("NEW ACCOUNT");
+    JButton CLIENTButton = new JButton("NEW ACCOUNT");
     JCheckBox showPassword = new JCheckBox("Show Password");
 
-    LOGINPAGESP() {
+    LOGINPAGEC() {
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
@@ -40,7 +38,7 @@ public class LOGINPAGESP extends JFrame implements ActionListener {
 
     }
 
-    LOGINPAGESP(CA1fm.EventHandler aThis, boolean b) {
+    LOGINPAGEC(CA1fm.EventHandler aThis, boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -49,13 +47,13 @@ public class LOGINPAGESP extends JFrame implements ActionListener {
     }
 
     public void setLocationAndSize() {
-        userLabel.setBounds(50, 150, 100, 30);
-        passwordLabel.setBounds(50, 220, 100, 30);
-        userTextField.setBounds(150, 150, 150, 30);
-        passwordField.setBounds(150, 220, 150, 30);
-        showPassword.setBounds(150, 250, 150, 30);
-        loginButton.setBounds(50, 300, 100, 30);
-        SPButton.setBounds(200, 300, 130, 30);
+        userLabel.setBounds(100, 150, 100, 30);
+        passwordLabel.setBounds(100, 220, 100, 30);
+        userTextField.setBounds(220, 150, 250, 30);
+        passwordField.setBounds(220, 220, 250, 30);
+        showPassword.setBounds(220, 250, 150, 30);
+        loginButton.setBounds(150, 300, 100, 40);
+        CLIENTButton.setBounds(350, 300, 130, 40);
         setSize(700, 550);
     }
 
@@ -66,21 +64,20 @@ public class LOGINPAGESP extends JFrame implements ActionListener {
         container.add(passwordField);
         container.add(showPassword);
         container.add(loginButton);
-        container.add(SPButton);
+        container.add(CLIENTButton);
     }
 
     public void addActionEvent() {
         loginButton.addActionListener(this);
-        SPButton.addActionListener(this);
+        CLIENTButton.addActionListener(this);
         showPassword.addActionListener(this);
     }
 
-    
-     @Override
+    @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == SPButton) {
+        if (e.getSource() == CLIENTButton) {
             NCLIENT nc = new NCLIENT() {
-               
+                @Override
                 public void actionPerformed(ActionEvent e) {
                     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 }
@@ -102,7 +99,7 @@ public class LOGINPAGESP extends JFrame implements ActionListener {
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
 
-                MenuSP ah = new MenuSP();
+                CONTROLLER ah = new CONTROLLER();
                 ah.setVisible(true);
                 dispose();
 

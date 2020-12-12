@@ -14,13 +14,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 
-// Fabiola, I set the Frames to "frame.setSize (500, 400)" width and size
-// To make it easier, you can use the structured pages I created, I will try to clean
-// the code to make it easy understanding
-//**Created folder libs that i included JPlanner (calender) source**.
 public class CA1fm extends JPanel {
 
-//the commands for the next pages
     static JButton button1;
     static JButton button2;
 
@@ -47,7 +42,7 @@ public class CA1fm extends JPanel {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        frame.setSize(500, 400);
+        frame.setSize(700, 550);
 
         panel.add(new JLabel("         "));
         panel.add(new JLabel("Hi!! Welcome to SOS Beauty!\n"
@@ -57,10 +52,7 @@ public class CA1fm extends JPanel {
         panel.add(button2);
 
         panel.setBorder(BorderFactory.createTitledBorder("SOS BEAUTY"));
-        // this should close the frame and open another one, but it must be in the wrong place.
-        // but that will solve it.
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        
     }
 
     public static class EventHandler implements ActionListener {
