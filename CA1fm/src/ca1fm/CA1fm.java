@@ -65,7 +65,7 @@ public class CA1fm extends JPanel {
                 
                   //dispose();
 
-            } // here your part .. of button2 SERVICEPROVIDER will enter.
+            } // FGhere your part .. of button2 SERVICEPROVIDER will enter.
             // my old condition is in the SERVICEPROVIDER class, you can copy all code from the NewCliente class and put it in
             // from SERVICEPROVIDER to have the same design.
             else if (e.getSource() == button2) {

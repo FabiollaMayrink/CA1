@@ -87,7 +87,7 @@ public class SETTINGS extends JFrame implements ActionListener {
         //panel.add(newUser);
 
         
-        // Adding the listeners to components..
+        // SDFCVAdding the listeners to components..
         submit.addActionListener(this);
         add(panel, BorderLayout.CENTER);
         setTitle("Please Login Here !");

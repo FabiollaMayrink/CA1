@@ -29,7 +29,7 @@ import javax.swing.JTextField;
 import static sun.swing.SwingUtilities2.submit;;
 
 /**
- *
+ *ASDC
  * @author farleyreis
  */
 public abstract class SERVICEPROVIDER extends JFrame implements ActionListener {

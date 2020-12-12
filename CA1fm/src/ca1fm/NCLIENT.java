@@ -134,7 +134,7 @@ public abstract class NCLIENT extends JFrame implements ActionListener {
 
     }
 
-    //function to execute the insert update delete query
+    //functioSDFVn to execute the insert update delete query
     public void theQuery(String query) {
         Connection con = null;
         Statement st = null;
