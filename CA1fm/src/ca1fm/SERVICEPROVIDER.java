@@ -32,7 +32,7 @@ import static sun.swing.SwingUtilities2.submit;;
  *
  * @author farleyreis
  */
-public class SERVICEPROVIDER extends JFrame implements ActionListener {
+public abstract class SERVICEPROVIDER extends JFrame implements ActionListener {
     
     JPanel panel;
     JLabel user_label, password_label, jobService, location, password_label2, message, email, phoneNumber;
@@ -170,7 +170,7 @@ public class SERVICEPROVIDER extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
 
-        new NCLIENT() {
+        new SERVICEPROVIDER() {
             
             
             public void actionPerformed(ActionEvent e) {
@@ -179,10 +179,4 @@ public class SERVICEPROVIDER extends JFrame implements ActionListener {
             
         };
     }
-
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }

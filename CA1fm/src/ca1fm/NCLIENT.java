@@ -1,7 +1,4 @@
 
-
-
-
 package ca1fm;
 /**
  *
@@ -162,6 +159,4 @@ public abstract class NCLIENT extends JFrame implements ActionListener {
         };
     }
 
-
- 
 }
